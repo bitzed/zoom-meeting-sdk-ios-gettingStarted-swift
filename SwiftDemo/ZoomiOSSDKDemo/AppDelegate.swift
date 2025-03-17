@@ -15,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Obtain your SDK Key and SDK Secret and paste it here.
     // Your SDK Secret should NEVER be publicly accessible, only use the sdk key and secret for testing this demo app.
     // For your own application, you must obtain a JWT instead of using the SDK Key and SDK Secret.
-    let sdkKey = ""
-    let sdkSecret = ""
+    let sdkKey = "nLhR1oKlQKqV6P8kvKeong"
+    let sdkSecret = "rwCnlgCmED216IkVNObNAhMpKe4xYe3O"
 
     var window: UIWindow?
 
@@ -51,10 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MobileRTC.shared().appDidBecomeActive()
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Notify MobileRTC of appDidEnterBackgroud call.
-        MobileRTC.shared().appDidEnterBackgroud()
-    }
+//    func applicationDidEnterBackground(_ application: UIApplication) {
+//        // Notify MobileRTC of appDidEnterBackgroud call.
+//        MobileRTC.shared().appDidEnterBackgroud()
+//    }
 
     /// Creates, Initializes, and Authorizes an instance of the Zoom SDK. This must be called before any other SDK functions.
     ///
@@ -82,8 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // Supply the SDK with SDK Key and SDK Secret. This is required if a JWT is not supplied.
             // To use a JWT, replace these lines with authorizationService.jwtToken = yourJWTToken.
-            authorizationService.clientKey = sdkKey
-            authorizationService.clientSecret = sdkSecret
+//            authorizationService.clientKey = sdkKey
+//            authorizationService.clientSecret = sdkSecret
+            authorizationService.jwtToken = "YOUR_JWT_TOKEN";
 
             // Assign AppDelegate to be a MobileRTCAuthDelegate to listen for authorization callbacks.
             authorizationService.delegate = self
